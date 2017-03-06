@@ -5,7 +5,11 @@ from matrix import *
 
 screen = new_screen()
 color = [ 0, 255, 0 ]
-edges = []
-transform = new_matrix
+edges = [1, 1, 1, 2, 2, 2]
+transform = new_matrix(1, 1)
+matrix= new_matrix(1, 1)
 
-parse_file( 'script', edges, transform, screen, color )
+add_edge(transform, 1, 1, 1, 2, 2, 2)
+print_matrix(transform)
+
+#parse_file( 'script', edges, transform, screen, color )
