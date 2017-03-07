@@ -1,10 +1,20 @@
 import math
 
 def make_translate( x, y, z ):
-    pass
-
+    iden= new_matrix(4,4)
+    ident(iden)
+    iden[3][0]=x
+    iden[3][1]=y
+    iden[3][2]=z
+    return iden
+    
 def make_scale( x, y, z ):
-    pass
+    iden= new_matrix(4,4)
+    ident(iden)
+    iden[0][0]=x
+    iden[1][1]=y
+    iden[2][2]=z
+    return iden
 
 def make_rotX( theta ):    
     pass
