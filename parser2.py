@@ -64,6 +64,8 @@ def parse_file( fname, points, transform, screen, color ):
             matrix_mult(trans, edge_matrix)
         elif command == "display":
             print "command is display"
+            print "this is the edge matrix"
+            print_matrix(edge_matrix)
             draw_lines(edge_matrix, screen, color)
             display(screen)
         elif command == "save":
@@ -71,14 +73,10 @@ def parse_file( fname, points, transform, screen, color ):
             name= f.readline()
             draw_lines(edge_matrix, screen, color)
             save_ppm(screen, name)
-            save_extention(screen, name)
+            save_extension(screen, name)
         elif command == "quit":
             print "command is quit"
-            break
-        print "this is current edge matrix"
-        print_matrix(edge_matrix)
-        print "this is current transform matrix"
-        print_matrix(trans)
+
         command= f.readline().strip()
 
     print "done"

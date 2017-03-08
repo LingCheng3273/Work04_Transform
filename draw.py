@@ -1,6 +1,6 @@
 from display import *
 from matrix import *
-
+import math
 
 def draw_lines( matrix, screen, color ):
     if len(matrix) < 2:
@@ -9,10 +9,10 @@ def draw_lines( matrix, screen, color ):
     
     point = 0
     while point < len(matrix) - 1:
-        draw_line( matrix[point][0],
-                   matrix[point][1],
-                   matrix[point+1][0],
-                   matrix[point+1][1],
+        draw_line( int(math.ceil(matrix[point][0])),
+                   int(math.ceil(matrix[point][1])),
+                   int(math.ceil(matrix[point+1][0])),
+                   int(math.ceil(matrix[point+1][1])),
                    screen, color)    
         point+= 2
         
