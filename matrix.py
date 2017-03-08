@@ -1,29 +1,47 @@
 import math
 
 def make_translate( x, y, z ):
-    iden= new_matrix(4,4)
-    ident(iden)
-    iden[3][0]=x
-    iden[3][1]=y
-    iden[3][2]=z
-    return iden
+    trans= new_matrix(4,4)
+    ident(trans)
+    trans[3][0]=x
+    trans[3][1]=y
+    trans[3][2]=z
+    return trans
     
 def make_scale( x, y, z ):
-    iden= new_matrix(4,4)
-    ident(iden)
-    iden[0][0]=x
-    iden[1][1]=y
-    iden[2][2]=z
-    return iden
+    scale= new_matrix(4,4)
+    ident(scale)
+    scale[0][0]=x
+    scale[1][1]=y
+    scale[2][2]=z
+    return scale
 
 def make_rotX( theta ):    
-    pass
+    theta= math.radians(theta)
+    rotX= new_matrix(4, 4)
+    ident(rotX)
+    rotX[1][1]= math.ceil(math.cos(theta))
+    rotX[2][1]= -1 * math.ceil(math.sin(theta))
+    rotX[1][2]= math.ceil(math.sin(theta))
+    rotX[2][2]= math.ceil(math.cos(theta))
 
 def make_rotY( theta ):
-    pass
+    theta= math.radians(theta)
+    rotY= new_matrix(4, 4)
+    ident(rotY)
+    rotY[0][0]= math.ceil(math.cos(theta))
+    rotY[2][0]= math.ceil(math.sin(theta))
+    rotY[0][2]= -1 * math.ceil(math.sin(theta))
+    rotY[2][2]= math.ceil(math.cos(theta))
 
 def make_rotZ( theta ):
-    pass
+    theta= math.radians(theta)
+    rotZ= new_matrix(4, 4)
+    ident(rotZ)
+    rotX[0][0]= math.ceil(math.cos(theta))
+    rotX[1][0]= -1 * math.ceil(math.sin(theta))
+    rotX[0][1]= math.ceil(math.sin(theta))
+    rotX[1][1]= math.ceil(math.cos(theta))
 
 def print_matrix( matrix ):
     s = ''
