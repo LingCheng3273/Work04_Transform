@@ -16,32 +16,38 @@ def make_scale( x, y, z ):
     scale[2][2]=z
     return scale
 
-def make_rotX( theta ):    
+def make_rotX( theta ):
+    theta= float(theta)
     theta= math.radians(theta)
     rotX= new_matrix(4, 4)
     ident(rotX)
-    rotX[1][1]= math.ceil(math.cos(theta))
-    rotX[2][1]= -1 * math.ceil(math.sin(theta))
-    rotX[1][2]= math.ceil(math.sin(theta))
-    rotX[2][2]= math.ceil(math.cos(theta))
+    rotX[1][1]= int(math.ceil(math.cos(theta)))
+    rotX[2][1]= -1 * int(math.ceil(math.sin(theta)))
+    rotX[1][2]= int(math.ceil(math.sin(theta)))
+    rotX[2][2]= int(math.ceil(math.cos(theta)))
+    return rotX
 
 def make_rotY( theta ):
+    theta= float(theta)
     theta= math.radians(theta)
     rotY= new_matrix(4, 4)
     ident(rotY)
-    rotY[0][0]= math.ceil(math.cos(theta))
-    rotY[2][0]= math.ceil(math.sin(theta))
-    rotY[0][2]= -1 * math.ceil(math.sin(theta))
-    rotY[2][2]= math.ceil(math.cos(theta))
+    rotY[0][0]= int(math.ceil(math.cos(theta)))
+    rotY[2][0]= int(math.ceil(math.sin(theta)))
+    rotY[0][2]= -1 * int(math.ceil(math.sin(theta)))
+    rotY[2][2]= int(math.ceil(math.cos(theta)))
+    return rotY
 
 def make_rotZ( theta ):
+    theta= float(theta)
     theta= math.radians(theta)
     rotZ= new_matrix(4, 4)
     ident(rotZ)
-    rotX[0][0]= math.ceil(math.cos(theta))
-    rotX[1][0]= -1 * math.ceil(math.sin(theta))
-    rotX[0][1]= math.ceil(math.sin(theta))
-    rotX[1][1]= math.ceil(math.cos(theta))
+    rotZ[0][0]= int(math.ceil(math.cos(theta)))
+    rotZ[1][0]= -1 * int(math.ceil(math.sin(theta)))
+    rotZ[0][1]= int(math.ceil(math.sin(theta)))
+    rotZ[1][1]= int(math.ceil(math.cos(theta)))
+    return rotZ
 
 def print_matrix( matrix ):
     s = ''
@@ -66,7 +72,6 @@ def scalar_mult( matrix, s ):
             
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
-
     point = 0
     for row in m2:
         #get a copy of the next point
