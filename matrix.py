@@ -22,11 +22,9 @@ def make_rotX( theta ):
     rotX= new_matrix(4, 4)
     ident(rotX)
     rotX[1][1]= math.cos(theta)
-    rotX[2][1]= -1 * math.sin(theta)
+    rotX[2][1]= -math.sin(theta)
     rotX[1][2]= math.sin(theta)
     rotX[2][2]= math.cos(theta)
-    print "your rot matrix"
-    print_matrix(rotX)
     return rotX
 
 def make_rotY( theta ):
@@ -36,10 +34,8 @@ def make_rotY( theta ):
     ident(rotY)
     rotY[0][0]= math.cos(theta)
     rotY[2][0]= math.sin(theta)
-    rotY[0][2]= -1 * math.sin(theta)
+    rotY[0][2]= -math.sin(theta)
     rotY[2][2]= math.cos(theta)
-    print "your rot matrix"
-    print_matrix(rotY)
     return rotY
 
 def make_rotZ( theta ):
@@ -48,11 +44,9 @@ def make_rotZ( theta ):
     rotZ= new_matrix(4, 4)
     ident(rotZ)
     rotZ[0][0]= math.cos(theta)
-    rotZ[1][0]= -1 * math.sin(theta)
+    rotZ[1][0]= -math.sin(theta)
     rotZ[0][1]= math.sin(theta)
     rotZ[1][1]= math.cos(theta)
-    print "your rot matrix"
-    print_matrix(rotZ)
     return rotZ
 
 def print_matrix( matrix ):
